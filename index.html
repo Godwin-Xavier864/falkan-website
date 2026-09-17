@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FALKAN | Predatory Vision. Institutional Precision. - Trading Arena & AI Research</title>
+  <meta name="description" content="Falkan is a next-generation paper-trading arena and AI-powered financial research platform. Master global markets with zero capital risk. Owned and operated by Mangozteen, Kerala.">
+  <meta name="keywords" content="Falkan, Paper Trading, Trading Simulator, AI Financial Research, Stock Market Simulation, Crypto Simulator, Mangozteen, Kerala">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="FALKAN | Trading Arena & AI Research Engine">
+  <meta property="og:description" content="Trade with Predatory Vision. Execute with Institutional Precision. Zero-risk multi-asset market simulation powered by AI.">
+  <meta property="og:image" content="assets/falkan_banner.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grid-bg"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <img src="assets/falkan_emblem.jpg" alt="Falkan Emblem" class="brand-emblem">
+        <span class="brand-title">FALKAN</span>
+        <span class="brand-badge">ARENA</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#ai-engine" class="nav-link">AI Intelligence</a></li>
+        <li><a href="#academy" class="nav-link">Academy</a></li>
+        <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
+        <li><a href="#about" class="nav-link">About Mangozteen</a></li>
+        <li><a href="#legal" class="nav-link">Legal</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li class="mobile-cta-item"><a href="https://app.falkan.in" class="btn btn-primary" style="width: 100%;">Launch App</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="#demo" class="btn btn-secondary btn-sm">Explore Demo</a>
+        <a href="https://app.falkan.in" class="btn btn-primary btn-sm">Launch App</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="pill-badge">
+        <span class="indicator"></span>
+        <span>Institutional Market Simulator &bull; Multi-Asset AI Intelligence</span>
+      </div>
+
+      <h1 class="hero-title">
+        Trade with <span class="highlight">Predatory Vision.</span><br>
+        Execute with Institutional Precision.
+      </h1>
+
+      <p class="hero-subtitle">
+        Falkan equips aspiring and professional traders with real-time market simulation, advanced AI-driven research, and an elite trading arena—engineered for zero capital risk.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://app.falkan.in" class="btn btn-primary">
+          <span>Start Paper Trading</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#demo" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          <span>Live Market Simulation</span>
+        </a>
+      </div>
+
+      <!-- Interactive Market Showcase Terminal -->
+      <div class="terminal-card" id="demo">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-tag">FALKAN CORE TERMINAL v2.5</div>
+          <div class="terminal-tabs">
+            <button class="terminal-tab-btn active" data-market="equities">Equities</button>
+            <button class="terminal-tab-btn" data-market="crypto">Crypto</button>
+            <button class="terminal-tab-btn" data-market="indices">Indices</button>
+            <button class="terminal-tab-btn" data-market="forex">Forex</button>
+          </div>
+        </div>
+
+        <div class="terminal-body">
+          <!-- Price & Chart View -->
+          <div class="ticker-box">
+            <div class="ticker-header">
+              <div>
+                <div class="ticker-symbol" id="tickerSymbol">RELIANCE.NS</div>
+                <div class="ticker-name" id="tickerName">Reliance Industries Ltd</div>
+              </div>
+              <div>
+                <div class="ticker-price" id="tickerPrice">₹2,984.45</div>
+                <div class="ticker-change positive" id="tickerChange">▲ +1.84%</div>
+              </div>
+            </div>
+
+            <!-- Candlestick Visualizer Mock -->
+            <div class="chart-preview" id="chartBars">
+              <!-- Dynamically populated by JS -->
+            </div>
+
+            <div class="stat-grid-mini">
+              <div class="stat-item-mini">
+                <div class="stat-label-mini">24H VOLUME</div>
+                <div class="stat-val-mini" id="statVolume">12.4M</div>
+              </div>
+              <div class="stat-item-mini">
+                <div class="stat-label-mini">VOLATILITY</div>
+                <div class="stat-val-mini" id="statVolatility">Moderate</div>
+              </div>
+              <div class="stat-item-mini">
+                <div class="stat-label-mini">EST. SPREAD</div>
+                <div class="stat-val-mini" id="statSpread">0.05</div>
+              </div>
+              <div class="stat-item-mini">
+                <div class="stat-label-mini">SLIPPAGE BUFFER</div>
+                <div class="stat-val-mini">1.0% Max</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Research Insight Panel -->
+          <div class="order-panel">
+            <div>
+              <div class="panel-title">
+                <span>AI Research Synthesis</span>
+                <span class="ai-pill">Real-Time Insight</span>
+              </div>
+              
+              <div class="ai-insight" id="aiInsightText">
+                Bullish divergence on 4H RSI with institutional accumulation detected. Order flow indicates strong support at key demand zones.
+              </div>
+
+              <div class="stat-grid-mini">
+                <div class="stat-item-mini">
+                  <div class="stat-label-mini">SENTIMENT INDEX</div>
+                  <div class="stat-val-mini positive" id="statSentiment">87% Bullish</div>
+                </div>
+                <div class="stat-item-mini">
+                  <div class="stat-label-mini">SIGNAL CONFIDENCE</div>
+                  <div class="stat-val-mini">High (Tier-1)</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.8rem; text-align: center;">
+                Simulated Execution Engine &bull; Risk-Free Paper Trading
+              </div>
+              <a href="https://app.falkan.in" class="btn btn-primary" style="width: 100%;">
+                Test Strategy with ₹1,000,000 Virtual Capital
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Metrics / Proof Bar -->
+  <section class="metrics-strip">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="metric-number">₹0</div>
+          <div class="metric-desc">Zero Real Capital Risk</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">100+</div>
+          <div class="metric-desc">Simulated Liquid Markets</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">&lt;50ms</div>
+          <div class="metric-desc">Order Matching Latency</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">24 / 7</div>
+          <div class="metric-desc">Continuous Market Simulation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Ecosystem</span>
+        <h2 class="section-title">Everything You Need to Master the Markets</h2>
+        <p class="section-subtitle">
+          Built for beginners building confidence and seasoned traders stress-testing complex strategies in true market conditions.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          </div>
+          <h3 class="feature-title">Simulated Trading Arena</h3>
+          <p class="feature-desc">
+            Experience realistic order fills with double-entry trade ledger matching and smart slippage protection. Test market, limit, and stop orders across multiple asset classes.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card cyan">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+          </div>
+          <h3 class="feature-title">AI Research Engine</h3>
+          <p class="feature-desc">
+            Harness multi-model AI synthesis to decode corporate filings, news sentiment, price action momentum, and technical breakout formations in seconds.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card green">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+          </div>
+          <h3 class="feature-title">Institutional Analytics</h3>
+          <p class="feature-desc">
+            Detailed performance attribution: win/loss ratios, maximum drawdown metrics, profit factor calculations, and automated trade journaling.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card" id="leaderboard">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1 .45-1 1v1h12v-1c0-.55-.45-1-1-1h-2c-.55 0-1-.45-1-1v-2.34"></path><path d="M6 4h12a2 2 0 0 1 2 2v3a6 6 0 0 1-6 6h0a6 6 0 0 1-6-6V6a2 2 0 0 1 2-2z"></path></svg>
+          </div>
+          <h3 class="feature-title">Trader Leaderboard</h3>
+          <p class="feature-desc">
+            Prove your edge on the global leaderboard. Earn trader XP, conquer daily risk-management challenges, and compete for community prestige.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card cyan">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <h3 class="feature-title">Falkan Academy</h3>
+          <p class="feature-desc">
+            Comprehensive curriculum spanning candlestick mechanics, Fibonacci retracements, liquidity sweeps, order blocks, and disciplined risk management.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card green">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3 class="feature-title">Live Market Feeds</h3>
+          <p class="feature-desc">
+            Simulate against live data streams covering Indian Equities, Global Indices, Forex, and Crypto pairs with synchronized real-time price updates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive: AI Research Engine -->
+  <section class="section" id="ai-engine" style="background: rgba(14, 20, 34, 0.4);">
+    <div class="container">
+      <div class="showcase-row">
+        <div>
+          <span class="showcase-badge">Market Intelligence</span>
+          <h2 class="showcase-title">AI-Powered Market Synthesis &amp; Trade Scanners</h2>
+          <p class="showcase-desc">
+            Stop drowning in hundreds of noisy tabs. Falkan's AI Research Engine continuously digests price movement, global macro indicators, and market sentiment to deliver instant, actionable intelligence.
+          </p>
+
+          <ul class="feature-checklist">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Instant Technical Summaries:</strong> Identify key support, resistance, and trend exhaustion points.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Multi-Market Sentiment Scoring:</strong> Real-time bullish vs. bearish probability metrics.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Educational Explanations:</strong> Understand <em>why</em> a pattern is forming before executing a simulated trade.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="showcase-graphic">
+          <img src="assets/falkan_banner.png" alt="Falkan Platform Banner" class="banner-img-responsive">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive: Academy & Gamification with Floating 3D Layer Animation -->
+  <section class="section" id="academy">
+    <div class="container">
+      <div class="showcase-row reverse">
+        <div>
+          <span class="showcase-badge" style="color: var(--accent-gold-light); background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">Education &amp; Growth</span>
+          <h2 class="showcase-title">Learn. Execute. Climb the Leaderboard.</h2>
+          <p class="showcase-desc">
+            Trading mastery is built through consistent habits, risk control, and disciplined execution. Falkan's Academy and Gamification framework ensure you stay motivated and accountable.
+          </p>
+
+          <ul class="feature-checklist">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Modular Learning Modules:</strong> Bite-sized interactive lessons crafted for fast retention.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Daily Trading Quests:</strong> Complete scenario-based challenges to earn experience points (XP).</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Global Trader Leaderboard:</strong> Measure your risk-adjusted return against traders worldwide.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Animated Floating 3D Graphic (Frameless - Card Removed) -->
+        <div class="showcase-frameless" style="text-align: center;">
+          <div class="graphic-glow-container">
+            <div class="glow-backdrop"></div>
+            <img src="assets/hero.png" alt="Falkan Academy & Leaderboard Architecture" class="floating-layer-graphic" style="max-height: 380px; object-fit: contain; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works" style="background: rgba(14, 20, 34, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple 4-Step Process</span>
+        <h2 class="section-title">How Falkan Works</h2>
+        <p class="section-subtitle">Jump from zero knowledge to confident, disciplined simulated execution.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Get Virtual Funding</h3>
+          <p class="step-desc">Create your free account and receive a fully funded virtual paper trading portfolio ready for deployment.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Scan Opportunities</h3>
+          <p class="step-desc">Use the AI Research Engine to screen technical patterns, sentiment shifts, and key support/resistance zones.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Execute Simulated Orders</h3>
+          <p class="step-desc">Place market or limit orders with realistic execution slippage and double-entry portfolio tracking.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Review &amp; Refine</h3>
+          <p class="step-desc">Inspect your trade journal, analyze risk-to-reward metrics, complete academy quests, and elevate your rank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Mangozteen Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="company-card">
+        <div>
+          <div class="company-badge">
+            <span>Corporate Identity &bull; Trusted Technology</span>
+          </div>
+          <h2 class="company-title">Owned &amp; Operated by Mangozteen</h2>
+          <p class="company-desc">
+            <strong>Falkan</strong> is owned and operated by <strong>Mangozteen</strong>, an enterprise based in <strong>Kerala, India</strong>.
+          </p>
+          <p class="company-desc">
+            At Mangozteen, our commitment is to provide access to institutional-grade educational tools, algorithmic intelligence, and risk-managed simulated environments—democratizing financial literacy without the burden of capital loss.
+          </p>
+          
+          <div class="company-highlights">
+            <div class="highlight-item">
+              <span class="highlight-dot"></span>
+              <span><strong>Headquartered:</strong> Kerala, India</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-dot"></span>
+              <span><strong>Core Focus:</strong> High-performance web applications, AI research tooling &amp; simulated fintech</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-dot"></span>
+              <span><strong>Platform Commitment:</strong> Educational integrity, zero financial risk &amp; maximum user privacy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="company-aside-box">
+          <img src="assets/falkan_emblem.jpg" alt="Mangozteen Falkan Emblem" class="company-emblem-lg">
+          <div class="company-aside-name">MANGOZTEEN</div>
+          <div class="company-aside-sub">Kerala, India</div>
+          <p style="font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 1.2rem;">
+            Driving cutting-edge software solutions and empowering tomorrow's analytical minds from God's Own Country.
+          </p>
+          <a href="https://app.falkan.in" class="btn btn-outline-gold btn-sm">Launch Falkan App</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal & Transparency Section (Normal, Clean Presentation) -->
+  <section class="legal-overview-section" id="legal">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 3rem;">
+        <span class="section-tag">Governance & Transparency</span>
+        <h2 class="section-title">Legal &amp; Regulatory Framework</h2>
+        <p class="section-subtitle">
+          Falkan is dedicated to complete regulatory clarity, visitor data protection, and transparent educational simulation practices.
+        </p>
+      </div>
+
+      <div class="legal-grid">
+        <!-- Privacy Policy Card -->
+        <div class="legal-summary-card" id="privacy-policy">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--accent-cyan-light); font-weight: 700; text-transform: uppercase; margin-bottom: 0.6rem; letter-spacing: 0.05em;">Data Protection &amp; Security</div>
+            <h3>Privacy Policy</h3>
+            <p>
+              We value your personal privacy. Learn how Falkan and Mangozteen collect, use, and protect your information in accordance with robust security standards. Zero banking credentials or real-money payment data are ever captured.
+            </p>
+          </div>
+          <div>
+            <a href="privacy-policy.html" class="btn btn-secondary btn-sm">Read Full Privacy Policy →</a>
+          </div>
+        </div>
+
+        <!-- Terms and Conditions Card -->
+        <div class="legal-summary-card" id="terms-and-conditions">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--accent-gold-light); font-weight: 700; text-transform: uppercase; margin-bottom: 0.6rem; letter-spacing: 0.05em;">User Agreement &amp; Rules</div>
+            <h3>Terms &amp; Conditions</h3>
+            <p>
+              Review the guidelines and operational conditions governing your access to Falkan's paper-trading simulation arena, AI research engine, and virtual portfolios. Subject to the legal jurisdiction of Kerala, India.
+            </p>
+          </div>
+          <div>
+            <a href="terms-and-conditions.html" class="btn btn-secondary btn-sm">Read Full Terms &amp; Conditions →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Frequently Asked Questions</span>
+        <h2 class="section-title">Clear Answers for Every Visitor</h2>
+        <p class="section-subtitle">Everything you need to know about the Falkan paper trading arena.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is Falkan a real broker or a simulation platform?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Falkan is strictly an educational paper trading simulation and AI research platform. It allows you to simulate live market trading without risking real financial capital.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do I need to deposit real money to use Falkan?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No real monetary deposit is ever required to trade on Falkan. Users receive virtual capital to experiment, learn, and test trading theories in real-time market conditions.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Who owns and operates Falkan?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Falkan is owned and operated by <strong>Mangozteen</strong>, a company based in Kerala, India.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the AI Research Engine generate insights?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            The AI engine synthesizes real-time market data feeds, multi-factor technical indicators, chart breakout patterns, and public sentiment to provide concise educational market summaries.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do the Leaderboards and Daily Quests work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            As you execute disciplined simulated trades and adhere to proper risk-management principles, you gain trader experience points (XP) and unlock badges, climbing the ranks of the Falkan Arena.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action Banner -->
+  <section class="container">
+    <div class="cta-banner">
+      <h2 class="cta-title">Ready to Awaken Your Trading Edge?</h2>
+      <p class="cta-subtitle">
+        Join hundreds of analytical traders refining strategies with zero financial risk on Falkan.
+      </p>
+      <a href="https://app.falkan.in" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.85rem 2rem;">
+        Launch Falkan Simulation Arena
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/falkan_emblem.jpg" alt="Falkan Emblem" class="brand-emblem">
+            <span class="brand-title">FALKAN</span>
+          </div>
+          <p>
+            The premier paper-trading arena and AI research suite. Trade with predatory vision, execute with institutional precision.
+          </p>
+          <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--accent-gold-light);">
+            Owned &amp; Operated by <strong>Mangozteen</strong> (Kerala, India).
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Core Features</a></li>
+            <li><a href="#ai-engine">AI Intelligence</a></li>
+            <li><a href="#academy">Academy</a></li>
+            <li><a href="#demo">Live Terminal</a></li>
+          </ul>
+        </div>
+
+        <!-- Company & Community -->
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Mangozteen</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Corporate Address / Notice -->
+        <div>
+          <h4 class="footer-col-title">Corporate Headquarters</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 0.8rem;">
+            <strong>Mangozteen</strong><br>
+            Kerala, India
+          </p>
+          <p style="font-size: 0.82rem; color: var(--text-dim);">
+            Empowering traders through modern simulation architecture and analytical software.
+          </p>
+        </div>
+      </div>
+
+      <!-- Regulatory / Educational Disclaimer -->
+      <div class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Falkan is an educational market simulation and research analysis platform. Falkan and its parent company Mangozteen do not provide investment advice, brokerage services, or portfolio management. Simulated paper trading results do not represent actual trading, and past simulated performance is no guarantee of real-world results.
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 <strong>FALKAN</strong>. All rights reserved. Owned and operated by <span class="company-meta">Mangozteen</span>, Kerala, India.
+        </p>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem;">
+          <a href="privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a>
+          <a href="terms-and-conditions.html" style="color: var(--text-dim); text-decoration: none;">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
